@@ -183,7 +183,39 @@ Example Output:
       "success":true,
       "end": "2015-02-28"
     }
+    
+## getCampaignPlanEndPlacements
 
+Using the parameter `(campaignservice)getCampaignPlanEndPlacements` will search all Placements' plans within the given campaign and return a list of placements with the date on which the final plan ends, the plan volume and the placement name. If nothing is found, it will return an empty array. The return values are provided in the "result" variable of the output.
+
+The HTTP POST argument (application/x-www-form-urlencoded) "campaignID" should be set to the campaign ID.
+
+Example Input:
+
+    campaignID=642001
+
+Example Output:
+
+    {
+      "success":true,
+      "result": {
+        "2165465": {
+            "end_date": "2015-02-28",
+            "volume": "0",
+            "name": "Test Placement 1"
+        },
+        "2165565": {
+            "end_date": "2015-07-18",
+            "volume": "0",
+            "name": "Test Placement 2"
+        },
+        "2165597": {
+            "end_date": "2015-03-12",
+            "volume": "0",
+            "name": "Test Placement 3"
+        }
+      }
+    }
 
 ## hideCampaign
 
